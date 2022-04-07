@@ -20,8 +20,8 @@ describe(" tests", () => {
       cy.log(response.body);
       expect(response.status).to.eq(200)
       expect(response.body).to.not.be.null
-      // expect(response.body).to.have.jsonSchema(schema);
-       cy.validateSchema(schema, response.body);
+       expect(response.body).to.have.jsonSchema(schema);
+      // cy.validateSchema(schema, response.body);
       expect(response.body.items[0].volumeInfo.title).to.deep.eq("The Way of Kings")
       expect(response.body.items.length).to.deep.eq(3)
     });

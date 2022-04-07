@@ -1,1 +1,9 @@
-{}
+{
+    "testFiles": [
+        "List-Books/list-book.spec.js",
+        "List-Books/list-not-book.spec.js",
+        "List-Books/list-book-isbn.spec.js",
+        "Get-Book/get-book.spec.js",
+        "Get-Book/dont-get-book.spec.js"
+      ]
+}

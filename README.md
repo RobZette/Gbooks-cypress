@@ -1,7 +1,7 @@
-# Google Books API Test Cypress
-> Tests automatiques de non régression sur l'API Google Books réalisé avec le framework **Cypress**
+# Google Books API Test Cypress <img src= "assets/pics/GoogleDev-logo.ico" align="right"></img>
+> Tests automatiques de non régression sur l'API Google Books réalisés avec le framework **Cypress**
 
-- Url de base = [googleapis.com/books/v1](https://www.googleapis.com/books/v1)
+- Url de base = **googleapis.com/books/v1**
 - Documentation = [developers.google.com/books](https://developers.google.com/books)
 ## Obtenir une liste de livres -
 #### Test passant d'obtention d'une liste de livres :
@@ -20,7 +20,7 @@ Quand On utilise la méthode GET
 Alors le serveur revoit un message 200
 Et La réponse ne contient aucun item
 ```
-#### Test passant d'obtention un livres avec son code ISBN :
+#### Test passant d'obtention d'un livres avec son code ISBN :
 ```
 Etant donné L'url {{baseUrl}}/volumes?q=isbn:9782070360536
 ET Le mot clef de la requête est l'ISBN précédé de isbn:
@@ -44,3 +44,7 @@ Etant donné L'url : {{baseUrl}}/volumes/badID
 Quand On utilise la méthode GET
 Alors Le serveur revoit un message 503
 ```
+#
+<img src= "assets/pics/Cypress-logo.png" height= 120 width= 120></img>
+<img src= "assets/pics/GitHub-logo.png" height= 120 width= 120 align="right"></img>
+<p align="center"> Contributeurs : Loïc Brachet - Robin Josso - Lucas Baste </p>
