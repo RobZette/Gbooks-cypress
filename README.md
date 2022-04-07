@@ -20,7 +20,7 @@ Quand On utilise la méthode GET
 Alors le serveur revoit un message 200
 Et La réponse ne contient aucun item
 ```
-#### Test passant d'obtention un livres avec son code ISBN :
+#### Test passant d'obtention d'un livres avec son code ISBN :
 ```
 Etant donné L'url {{baseUrl}}/volumes?q=isbn:9782070360536
 ET Le mot clef de la requête est l'ISBN précédé de isbn:
