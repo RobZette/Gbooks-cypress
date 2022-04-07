@@ -3,6 +3,7 @@
 describe("Passing test for obtaining a book with its ISBN code", () => {
   it("should return a book with corresponding ISBN", () => {
     let searchedIsbn = "2848654708";
+
     cy.bookSearchISBN(searchedIsbn).then((response) => {
       let volumeInfo = response.body.items[0].volumeInfo.industryIdentifiers;
       let isbn10;

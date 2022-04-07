@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.5.3"
+  },
+  "dependencies": {
+    "chai-json-schema": "^1.5.1"
   }
 }
