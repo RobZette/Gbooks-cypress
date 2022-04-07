@@ -45,6 +45,6 @@ Quand On utilise la méthode GET
 Alors Le serveur revoit un message 503
 ```
 
-<div style="display: flex; justify-content: space-between; padding: 1.2rem 2.4rem 1.2rem 4.8rem"><img src= "assets/pics/Cypress-logo.png" height= 120 width= 120></img><img src= "assets/pics/Google-logo.png" height= 120 width= 120></img><img src= "assets/pics/GitHub-logo.png" height= 120 width= 120></img></div>
-
+<img src= "assets/pics/Cypress-logo.png" height= 120 width= 120></img>
+<img src= "assets/pics/GitHub-logo.png" height= 120 width= 120 align="right"></img>
 > <p align="center"> Contributeurs : Loïc Brachet - Robin Josso - Lucas Baste </p>
