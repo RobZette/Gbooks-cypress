@@ -1,9 +1,12 @@
 /// <reference types="cypress" />
 
-describe(" tests", () => {
+describe("Test non passant d'obtention d'une liste de livres", () => {
   it("test", () => {
-    cy.bookSearch("The way of Kings").then((response) => {
-      cy.log(response.body);
+    cy.bookSearch("badQuery").then((response) => {
+      expect(response.status).to.eql(200);
+      expect(response.body.totalItems).to.eql(0);
+      console.log(response.body)
+
     });
   });
 });
