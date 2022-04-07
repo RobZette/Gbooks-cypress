@@ -1,5 +1,5 @@
 # Google Books API Test Cypress <img src= "assets/pics/GoogleDev-logo.ico" align="right"></img>
-> Tests automatiques de non régression sur l'API Google Books réalisé avec le framework **Cypress**
+> Tests automatiques de non régression sur l'API Google Books réalisés avec le framework **Cypress**
 
 - Url de base = **googleapis.com/books/v1**
 - Documentation = [developers.google.com/books](https://developers.google.com/books)
