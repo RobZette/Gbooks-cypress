@@ -14,7 +14,7 @@ const schema=
       "items": "array"
     }
   }};
-describe(" tests", () => {
+describe("Passing test for obtaining a list of books", () => {
   it("test", () => {
     cy.bookSearch("The way of Kings").then((response) => {
       cy.log(response.body);

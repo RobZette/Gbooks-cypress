@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe(" tests", () => {
+describe("Passing test for obtaining a book with its ISBN code", () => {
   it("should return a book with corresponding ISBN", () => {
     let searchedIsbn = "2848654708";
     cy.bookSearchISBN(searchedIsbn).then((response) => {

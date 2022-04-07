@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-describe("Test", () => {
-    it("Test non passant d'accés à un livre", () => {
+describe("Failed book access test", () => {
+    it("should return a 503 error", () => {
+        cy.log('TODO')
       
     });
-  });
-  
+});
