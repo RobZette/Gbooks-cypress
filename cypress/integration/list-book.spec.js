@@ -21,7 +21,7 @@ describe(" tests", () => {
       expect(response.status).to.eq(200)
       expect(response.body).to.not.be.null
       // expect(response.body).to.have.jsonSchema(schema);
-      expect(response.body.items).to.deep.eq("The way of Kings")
+      expect(response.body.items[0].volumeInfo.title).to.deep.eq("The Way of Kings")
     });
   });
 });
