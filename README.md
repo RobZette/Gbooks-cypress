@@ -1,4 +1,4 @@
-# Google Books API Test Cypress <img src= "https://developers.google.com/favicon.ico" align="right"></img>
+# Google Books API Test Cypress <img src= "assets/pics/GoogleDev-logo.ico" align="right"></img>
 > Tests automatiques de non régression sur l'API Google Books réalisé avec le framework **Cypress**
 
 - Url de base = **googleapis.com/books/v1**
@@ -45,7 +45,6 @@ Quand On utilise la méthode GET
 Alors Le serveur revoit un message 503
 ```
 #
-
 <img src= "assets/pics/Cypress-logo.png" height= 120 width= 120></img>
 <img src= "assets/pics/GitHub-logo.png" height= 120 width= 120 align="right"></img>
 <p align="center"> Contributeurs : Loïc Brachet - Robin Josso - Lucas Baste </p>
