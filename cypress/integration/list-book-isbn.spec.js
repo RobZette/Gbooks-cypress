@@ -2,7 +2,7 @@
 
 describe(" tests", () => {
   it("test", () => {
-    cy.bookSearch("The way of Kings").then((response) => {
+    cy.bookSearch("9782848654706").then((response) => {
       cy.log(response.body);
     });
   });
