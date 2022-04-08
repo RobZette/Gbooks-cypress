@@ -46,5 +46,5 @@ Alors Le serveur revoit un message 503
 ```
 #
 <img src= "assets/pics/Cypress-logo.png" height= 120 width= 120></img>
-<img src= "assets/pics/GitHub-logo.png" height= 120 width= 120 align="right" style="background-color:#0a0c10;border-radius:50%"></img>
+<img src= "assets/pics/GitHub-logo.png" height= 120 width= 120 align="right"></img>
 <p align="center"> Contributeurs : Loïc Brachet - Robin Josso - Lucas Baste </p>
