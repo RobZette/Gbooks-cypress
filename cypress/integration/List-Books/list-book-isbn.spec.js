@@ -32,4 +32,30 @@ describe("Passing test for obtaining a book with its ISBN code", () => {
       }
     });
   });
+
+  it.only("should perform a query and find a book", () => {
+    let randomIndex;
+
+    cy.request({
+      url: "/books/v1/volumes",
+      qs: { q: "intitle:asterix" },
+    }).then((resp) => {
+      expect(resp.status).to.eq(200);
+      expect(resp.body.items).to.be.an("array");
+      expect(resp.body.items.length).to.be.greaterThan(1);
+
+      randomIndex = Math.floor(Math.random() * resp.body.items.length);
+
+      let randomId = resp.body.items[randomIndex].id;
+      cy.wrap(randomId).as("bookId");
+    });
+
+    cy.get("@bookId")
+      .then((bookId) => {
+        cy.request(`/books/v1/volumes/${bookId}`);
+      })
+      .then((resp) => {
+        cy.log(resp.body);
+      });
+  });
 });
