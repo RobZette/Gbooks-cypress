@@ -18,3 +18,10 @@ Cypress.Commands.add("bookSearchISBN", (query) => {
     },
   });
 });
+
+Cypress.Commands.add("GetBook", (id) => {
+  cy.request({
+    url: `https://www.googleapis.com/books/v1/volumes/${id}`,
+    failOnStatusCode: false
+  }).as('response');
+});
