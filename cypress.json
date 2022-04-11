@@ -6,5 +6,19 @@
         "Get-Book/get-book.spec.js",
         "Get-Book/dont-get-book.spec.js"
       ],
-      "baseUrl": "https://www.googleapis.com"
+      "baseUrl": "https://www.googleapis.com",
+      "reporter":"mochawesome",
+      "reporterOptions": {
+
+        "reportDir": "cypress/results",
+
+        "overwrite": false,
+
+        "html": false,
+
+        "json": true
+        
+    },
+    "video" : false
+
 }

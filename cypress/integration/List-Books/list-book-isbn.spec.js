@@ -33,7 +33,7 @@ describe("Passing test for obtaining a book with its ISBN code", () => {
     });
   });
 
-  it.only("should perform a query and find a book", () => {
+  it("should perform a query and find a book", () => {
     let randomIndex;
 
     cy.request({

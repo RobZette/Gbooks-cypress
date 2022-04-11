@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-11T09:02:59.499Z",
+    "end": "2022-04-11T09:03:00.426Z",
+    "duration": 927,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b8da6f38-020f-4e4b-a8c1-13164de76974",
+      "title": "",
+      "fullFile": "cypress/integration/List-Books/list-book-isbn.spec.js",
+      "file": "cypress/integration/List-Books/list-book-isbn.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2621b8a3-b40a-4e0c-bfb6-03083b58902a",
+          "title": "Passing test for obtaining a book with its ISBN code",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return a book with corresponding ISBN",
+              "fullTitle": "Passing test for obtaining a book with its ISBN code should return a book with corresponding ISBN",
+              "timedOut": null,
+              "duration": 335,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let searchedIsbn = \"2848654708\";\ncy.bookSearchISBN(searchedIsbn).then(response => {\n  let volumeInfo = response.body.items[0].volumeInfo.industryIdentifiers;\n  let isbn10;\n  let isbn13;\n  console.log(volumeInfo);\n  if (volumeInfo[0].type == \"ISBN_10\") {\n    isbn10 = volumeInfo[0].identifier;\n    if (volumeInfo.length > 1) {\n      isbn13 = volumeInfo[1].identifier;\n    }\n  } else {\n    isbn10 = volumeInfo[1].identifier;\n    if (volumeInfo.length > 1) {\n      isbn13 = volumeInfo[0].identifier;\n    }\n  }\n  expect(response.status).to.eq(200);\n  if (searchedIsbn.length == 10) {\n    expect(isbn10).to.eq(searchedIsbn);\n  } else if (searchedIsbn.length == 13) {\n    expect(isbn13).to.eq(searchedIsbn);\n  }\n});",
+              "err": {},
+              "uuid": "6d948707-1afc-4cfa-ba71-d0cebf890860",
+              "parentUUID": "2621b8a3-b40a-4e0c-bfb6-03083b58902a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should perform a query and find a book",
+              "fullTitle": "Passing test for obtaining a book with its ISBN code should perform a query and find a book",
+              "timedOut": null,
+              "duration": 568,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let randomIndex;\ncy.request({\n  url: \"/books/v1/volumes\",\n  qs: {\n    q: \"intitle:asterix\"\n  }\n}).then(resp => {\n  expect(resp.status).to.eq(200);\n  expect(resp.body.items).to.be.an(\"array\");\n  expect(resp.body.items.length).to.be.greaterThan(1);\n  randomIndex = Math.floor(Math.random() * resp.body.items.length);\n  let randomId = resp.body.items[randomIndex].id;\n  cy.wrap(randomId).as(\"bookId\");\n});\ncy.get(\"@bookId\").then(bookId => {\n  cy.request(`/books/v1/volumes/${bookId}`);\n}).then(resp => {\n  cy.log(resp.body);\n});",
+              "err": {},
+              "uuid": "e2368ec9-1958-487e-894c-bf7b15f8171a",
+              "parentUUID": "2621b8a3-b40a-4e0c-bfb6-03083b58902a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6d948707-1afc-4cfa-ba71-d0cebf890860",
+            "e2368ec9-1958-487e-894c-bf7b15f8171a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 903,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
